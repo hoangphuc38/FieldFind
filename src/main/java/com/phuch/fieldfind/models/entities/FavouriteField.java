@@ -19,10 +19,10 @@ public class FavouriteField {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "CustomerID", nullable = false)
-    private User customerID;
+    private User customer;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "FieldID", nullable = false)
-    private Field fieldID;
+    private Field field;
 
 }

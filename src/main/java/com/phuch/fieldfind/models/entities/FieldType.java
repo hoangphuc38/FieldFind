@@ -23,7 +23,7 @@ public class FieldType {
     @Column(name = "PricePerHour")
     private Float pricePerHour;
 
-    @OneToMany(mappedBy = "fieldTypeID")
+    @OneToMany(mappedBy = "fieldType")
     private Set<Field> fields = new LinkedHashSet<>();
 
 }

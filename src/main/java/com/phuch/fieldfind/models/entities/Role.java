@@ -17,7 +17,7 @@ public class Role {
     @Column(name = "RoleName", length = 20)
     private String roleName;
 
-    @OneToOne(mappedBy = "roleID")
+    @OneToOne(mappedBy = "role")
     private User user;
 
 }

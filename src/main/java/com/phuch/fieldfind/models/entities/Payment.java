@@ -23,11 +23,11 @@ public class Payment {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "BookingID")
-    private Booking bookingID;
+    private Booking booking;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PaymentTypeID")
-    private PaymentType paymentTypeID;
+    private PaymentType paymentType;
 
     @Column(name = "TransactionNo", length = 100)
     private String transactionNo;

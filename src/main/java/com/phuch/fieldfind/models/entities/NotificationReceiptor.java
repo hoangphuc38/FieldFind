@@ -19,11 +19,11 @@ public class NotificationReceiptor {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "NotificationID")
-    private Notification notificationID;
+    private Notification notification;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "UserID")
-    private User userID;
+    private User user;
 
     @Column(name = "IsRead")
     private Boolean isRead;

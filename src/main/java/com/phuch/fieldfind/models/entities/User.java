@@ -21,7 +21,7 @@ public class User {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "RoleID")
-    private Role roleID;
+    private Role role;
 
     @Column(name = "Email", length = 100)
     private String email;
@@ -44,22 +44,22 @@ public class User {
     @Column(name = "UpdatedAt")
     private Instant updatedAt;
 
-    @OneToMany(mappedBy = "customerID")
+    @OneToMany(mappedBy = "customer")
     private Set<Booking> bookings = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "customerID")
-    private Set<FavouriteField> favouritefields = new LinkedHashSet<>();
+    @OneToMany(mappedBy = "customer")
+    private Set<FavouriteField> favouriteFields = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "customerID")
+    @OneToMany(mappedBy = "customer")
     private Set<Feedback> feedbacks = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "userID")
-    private Set<FieldOwner> fieldowners = new LinkedHashSet<>();
+    @OneToMany(mappedBy = "user")
+    private Set<FieldOwner> fieldOwners = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "userID")
-    private Set<NotificationReceiptor> notificationreceiptors = new LinkedHashSet<>();
+    @OneToMany(mappedBy = "user")
+    private Set<NotificationReceiptor> notificationReceiptors = new LinkedHashSet<>();
 
-    @OneToOne(mappedBy = "userID")
+    @OneToOne(mappedBy = "user")
     private RefreshToken refreshtoken;
 
 }

@@ -20,7 +20,7 @@ public class RefreshToken {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "UserID")
-    private User userID;
+    private User user;
 
     @Column(name = "Token", length = 200)
     private String token;

@@ -20,11 +20,11 @@ public class Booking {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "FieldID")
-    private Field fieldID;
+    private Field field;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CustomerID")
-    private User customerID;
+    private User customer;
 
     @Column(name = "BookingDate")
     private Instant bookingDate;
@@ -50,10 +50,10 @@ public class Booking {
     @Column(name = "UpdatedAt")
     private Instant updatedAt;
 
-    @OneToOne(mappedBy = "bookingID")
+    @OneToOne(mappedBy = "booking")
     private Invoice invoice;
 
-    @OneToOne(mappedBy = "bookingID")
+    @OneToOne(mappedBy = "booking")
     private Payment payment;
 
 }

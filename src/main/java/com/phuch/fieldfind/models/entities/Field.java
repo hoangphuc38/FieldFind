@@ -24,11 +24,11 @@ public class Field {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "FieldTypeID")
-    private FieldType fieldTypeID;
+    private FieldType fieldType;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "OwnerID")
-    private FieldOwner ownerID;
+    private FieldOwner owner;
 
     @Column(name = "Name", length = 100)
     private String name;
@@ -54,13 +54,13 @@ public class Field {
     @Column(name = "UpdatedAt")
     private Instant updatedAt;
 
-    @OneToMany(mappedBy = "fieldID")
+    @OneToMany(mappedBy = "field")
     private Set<Booking> bookings = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "fieldID")
-    private Set<FavouriteField> favouritefields = new LinkedHashSet<>();
+    @OneToMany(mappedBy = "field")
+    private Set<FavouriteField> favouriteFields = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "fieldID")
+    @OneToMany(mappedBy = "field")
     private Set<Feedback> feedbacks = new LinkedHashSet<>();
 
 }

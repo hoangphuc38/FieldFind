@@ -17,7 +17,7 @@ public class PaymentType {
     @Column(name = "TypeName", length = 100)
     private String typeName;
 
-    @OneToOne(mappedBy = "paymentTypeID")
+    @OneToOne(mappedBy = "paymentType")
     private Payment payment;
 
 }

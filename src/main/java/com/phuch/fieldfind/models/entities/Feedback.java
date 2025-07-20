@@ -21,11 +21,11 @@ public class Feedback {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CustomerID")
-    private User customerID;
+    private User customer;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "FieldID")
-    private Field fieldID;
+    private Field field;
 
     @Column(name = "Content", length = 200)
     private String content;

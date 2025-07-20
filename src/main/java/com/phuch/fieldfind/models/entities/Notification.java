@@ -30,7 +30,7 @@ public class Notification {
     @Column(name = "SentDate")
     private Instant sentDate;
 
-    @OneToMany(mappedBy = "notificationID")
-    private Set<NotificationReceiptor> notificationreceiptors = new LinkedHashSet<>();
+    @OneToMany(mappedBy = "notification")
+    private Set<NotificationReceiptor> notificationReceiptors = new LinkedHashSet<>();
 
 }

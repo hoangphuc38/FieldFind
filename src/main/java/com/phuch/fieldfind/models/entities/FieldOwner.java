@@ -22,7 +22,7 @@ public class FieldOwner {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "UserID")
-    private User userID;
+    private User user;
 
     @Column(name = "BusinessName", length = 100)
     private String businessName;
@@ -36,7 +36,7 @@ public class FieldOwner {
     @Column(name = "UpdatedAt")
     private Instant updatedAt;
 
-    @OneToMany(mappedBy = "ownerID")
+    @OneToMany(mappedBy = "owner")
     private Set<Field> fields = new LinkedHashSet<>();
 
 }

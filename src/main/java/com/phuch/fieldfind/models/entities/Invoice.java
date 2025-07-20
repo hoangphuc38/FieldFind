@@ -22,7 +22,7 @@ public class Invoice {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "BookingID")
-    private Booking bookingID;
+    private Booking booking;
 
     @Column(name = "CustomerName", length = 100)
     private String customerName;
