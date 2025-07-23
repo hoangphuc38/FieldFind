@@ -1,4 +1,4 @@
-package com.phuch.fieldfind.services;
+package com.phuch.fieldfind.services.impl;
 
 import com.phuch.fieldfind.models.entities.Role;
 import com.phuch.fieldfind.models.entities.User;

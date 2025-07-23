@@ -1,5 +1,6 @@
 package com.phuch.fieldfind.security;
 
+import com.phuch.fieldfind.models.constants.Constant;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -15,17 +16,18 @@ public class JwtTokenProvider {
     @Value("${app.jwt-secret}")
     private String jwtSecret;
 
-    @Value("${app.jwt-expiration-milliseconds}")
-    private long jwtExpirationTime;
-
     public String generateToken(String username){
-        return createToken(username);
+        return createToken(username, Constant.ACCESS_TOKEN_VALIDITY_SECONDS);
     }
 
-    public String createToken(String username){
+    public String generateRefreshToken(String username){
+        return createToken(username, Constant.REFRESH_TOKEN_VALIDITY_SECONDS);
+    }
+
+    public String createToken(String username, Long expiredTime){
         Date currentDate = new Date();
 
-        Date expireDate = new Date(currentDate.getTime() + jwtExpirationTime);
+        Date expireDate = new Date(currentDate.getTime() + expiredTime);
 
         return Jwts.builder()
                 .subject(username)

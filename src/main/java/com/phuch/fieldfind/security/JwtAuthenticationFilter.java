@@ -1,6 +1,6 @@
 package com.phuch.fieldfind.security;
 
-import com.phuch.fieldfind.services.CustomUserDetailsService;
+import com.phuch.fieldfind.services.impl.CustomUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
